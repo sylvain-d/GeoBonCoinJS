@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/sylvain-d/GeoBonCoinJS#readme",
   "dependencies": {
+    "@google/maps": "^0.5.5",
     "lodash": "^4.17.11",
     "mongoose": "^5.4.19"
   }
