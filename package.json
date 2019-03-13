@@ -1,0 +1,30 @@
+{
+  "name": "geoboncoinjs",
+  "version": "1.0.0",
+  "description": "Learning JS Node Mongo Git",
+  "main": "MyFirstJS.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sylvain-d/GeoBonCoinJS.git"
+  },
+  "keywords": [
+    "js",
+    "node",
+    "mongo",
+    "gmaps",
+    "leboncoin"
+  ],
+  "author": "sylvain-d",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sylvain-d/GeoBonCoinJS/issues"
+  },
+  "homepage": "https://github.com/sylvain-d/GeoBonCoinJS#readme",
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "mongoose": "^5.4.19"
+  }
+}
