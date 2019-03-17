@@ -5,6 +5,9 @@ import rien from './Ojects';
 console.log(rien);
 */
 
+var monExport = require("./Ojects.js");
+
+
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test');
 
@@ -17,7 +20,7 @@ db.once('open', function() {
 });
 
 
-var placeTest = new Place("69006","Lyon");
+var placeTest = new monExport.lieu("69006","Lyon");
 console.log(placeTest);
 
 //const Schema = mongoose.Schema;
@@ -27,11 +30,10 @@ var placesSchema = new mongoose.Schema({
   dbId : mongoose.Schema.ObjectId,
   zipCode : String,
   city : String,
-  latitude : undefined,
-  longitude : undefined,
-  crd_long_lat : [long, lat],
-  crd_geoJson : {type : "Point", coordinates:[long,lat]},
-
+  latitude : String,
+  longitude : String,
+  //crd_long_lat : [long, lat],
+  //crd_geoJson : { type : "Point", coordinates:[]},
   keyPlace : String,
   idPlaceGMap : String
 });
@@ -40,7 +42,9 @@ var PlacesModel = mongoose.model("PlacesModel",placesSchema);
 
 var testPlace = new PlacesModel();
 
+console.log('TestPlace='+testPlace);
 
+db.close();
 
 
 

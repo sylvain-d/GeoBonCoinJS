@@ -1,10 +1,8 @@
+var exports = module.exports = {};
 
-var test = { 
-    name : "tptp",
-    age : 15
-};
 
-function Place(zipCode, city) {
+
+exports.lieu = function (zipCode, city) {
     this.zipCode = zipCode;
     this.city = city;
     this.latitude = undefined;
@@ -19,10 +17,22 @@ function Place(zipCode, city) {
       this.latitude = lat;
       this.longitude = lng;
       this.idPlaceGMap = idPlace;
-      this.crd_long_lat = [long,lat];
+      this.crd_long_lat = [lng,lat];
       this.crd_geoJson = {type:"Point",coordinates:this.crd_long_lat};
-    }
+    };
+    this.mockGeocode = function () {
+      this.latitude = 45.7677497;
+      this.longitude = 4.8635011;
+      this.idPlaceGMap = "ChIJWxjP5oXq9EcRUCRj3S4JJEk";
+      this.crd_long_lat = [this.longitude,this.latitude];
+      this.crd_geoJson = {type:"Point",coordinates:this.crd_long_lat};
+      }
+    };
+
+
+
+exports.testtest = {
+  name : "sylvain",
+  age : 37
 }
 
-
-//export {Place,test};
