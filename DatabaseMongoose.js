@@ -1,3 +1,10 @@
+/*
+import * as testSDE from './Ojects.js';
+import rien from './Ojects';
+
+console.log(rien);
+*/
+
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test');
 
@@ -9,6 +16,9 @@ db.once('open', function() {
 
 });
 
+
+var placeTest = new Place("69006","Lyon");
+console.log(placeTest);
 
 //const Schema = mongoose.Schema;
 //const ObjectId = Schema.ObjectId;
