@@ -11,15 +11,13 @@ var monTableau = ["tintin","Milou","Archibald","Tryphon"];
 
 
 var testPlace = new Place("38200","Villette de Vienne");
-console.log(testPlace);
+logger(testPlace);
 
-console.log(testPlace.toString());
+logger(testPlace.toString());
 
 function logger (dataToLog){
   console.log(dataToLog);
 }
-
-logger("test");
 
 if(int1 == char1) {
     console.log("int1 == char1");
@@ -34,10 +32,9 @@ if(int1 === int2){
     console.log("int === int 2");
 }
 
-geocodePlace(new Place("69006","Lyon"));
+//geocodePlace(new Place("69006","Lyon"));
 
 utiliTableau(monTableau);
-//alert("coucou");
 
 function utiliTableau (unTableau) {
 var autreTableau = ["castafiore","rastapopoulous"];
@@ -58,6 +55,8 @@ function Place(zipCode, city) {
     this.city = city;
     this.latitude = undefined;
     this.longitude = undefined;
+    this.crd_long_lat = undefined;
+    this.crd_geoJson = undefined;
     //Generate KeyPlace by joining zipCode & City without spaces
     this.keyPlace = (this.zipCode+this.city).replace(new RegExp(" ","g"),"");
     //Place ID from GMaps, avoiding another geocoding request, not usefull considering the previous key, for futur usage
@@ -66,6 +65,8 @@ function Place(zipCode, city) {
       this.latitude = lat;
       this.longitude = lng;
       this.idPlaceGMap = idPlace;
+      this.crd_long_lat = [long,lat];
+      this.crd_geoJson = {type:"Point",coordinates:this.crd_long_lat};
     }
   }
 
@@ -149,7 +150,6 @@ function geocodePlace(placeToGeocode) {
 
 
 }
-
 
 
 /*
