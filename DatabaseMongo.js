@@ -2,6 +2,7 @@ var monExport = require("./Ojects.js");
 const mongo = require("mongodb").MongoClient;
 //mongo for raw storage of document, and moongoose for id and search
 //try mongo spatial search with document with only spatial data.
+//sync for getting a dbo before starting program
 
 mongo.connect("mongodb://localhost/test", function(error, db) {
     if(error) {
