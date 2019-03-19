@@ -4,6 +4,8 @@ import rien from './Ojects';
 
 console.log(rien);
 */
+//idea : mongo for document and mongoose for indexing and search
+//sync for getting a dbo before starting program
 
 var monExport = require("./Ojects.js");
 
