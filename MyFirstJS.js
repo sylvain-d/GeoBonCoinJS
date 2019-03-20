@@ -1,4 +1,6 @@
 //var express = require('express');
+var utils = require("./Utils.js");
+
 const GMAP_API = 'AIzaSyCHZx19rrBq4rDw7_b69Gjsa4EuFSv3G8Y';
 var lodash = require('lodash');
 var int1 = 1;
@@ -11,25 +13,24 @@ var monTableau = ["tintin","Milou","Archibald","Tryphon"];
 
 
 var testPlace = new Place("38200","Villette de Vienne");
-logger(testPlace);
+utils.logger(testPlace);
 
-logger(testPlace.toString());
+utils.logger("test", "DEBUG");
+utils.logger("test", "INFO");
+utils.logger("test", "WARN");
 
-function logger (dataToLog){
-  console.log(dataToLog);
-}
 
 if(int1 == char1) {
-    console.log("int1 == char1");
+    utils.logger("int1 == char1");
 }
 if (int1 === char1) {
-    console.log("int1 === char1");
+    utils.logger("int1 === char1");
 }
 if(int1 == int2){
-    console.log("int == int 2");
+  utils.logger("int == int 2");
 }
 if(int1 === int2){
-    console.log("int === int 2");
+  utils.logger("int === int 2");
 }
 
 //geocodePlace(new Place("69006","Lyon"));
@@ -38,10 +39,10 @@ utiliTableau(monTableau);
 
 function utiliTableau (unTableau) {
 var autreTableau = ["castafiore","rastapopoulous"];
-console.log(unTableau.toString());
+
 autreTableau = autreTableau.concat(unTableau);
 
-    console.log("coucou"+autreTableau.toString());
+   utils.logger(autreTableau);
 
 
 
