@@ -1,16 +1,9 @@
-/*
-import * as testSDE from './Ojects.js';
-import rien from './Ojects';
-
-console.log(rien);
-*/
 //idea : mongo for document and mongoose for indexing and search
 //sync for getting a dbo before starting program
 
-var monExport = require("./Ojects.js");
-
-
+var monExport = require("./Objects.js");
 const mongoose = require('mongoose');
+
 mongoose.connect('mongodb://localhost/test');
 
 var db = mongoose.connection;
@@ -22,29 +15,46 @@ db.once('open', function() {
 });
 
 
-var placeTest = new monExport.lieu("69006","Lyon");
-console.log(placeTest);
-
 //const Schema = mongoose.Schema;
 //const ObjectId = Schema.ObjectId;
 
-var placesSchema = new mongoose.Schema({
-  dbId : mongoose.Schema.ObjectId,
-  zipCode : String,
-  city : String,
-  latitude : String,
-  longitude : String,
-  //crd_long_lat : [long, lat],
-  //crd_geoJson : { type : "Point", coordinates:[]},
+//https://mongoosejs.com/docs/geojson.html
+/**
+ * Mongoose schema for indexing mongo document of Places.
+ * @property {String} keyPlace Concatenation of zipCode and City, ex "69006Lyon"
+ * @property {String} idPlaceGMap id of Place in GMap
+ * @property {GeoJSON} location geoJson of Place
+ */
+var placesIndexSchema = new mongoose.Schema({
+  //_id : by defaut with mongo
+  /**
+   * _id given by mongo for document representing the place
+   */
+  idPlaceInMongo : mongoose.Schema.Types.ObjectId,
   keyPlace : String,
-  idPlaceGMap : String
+  idPlaceGMap : String,
+  location : {
+    type : {
+      type : String,
+      enum : ["Point"],
+      required : true,
+    },
+    coordinates : {
+      type : [Number],
+      required : true,      
+    }
+   }
+  
 });
 
-var PlacesModel = mongoose.model("PlacesModel",placesSchema);
+const PlacesIndexModel = mongoose.model("PlacesIndexModel",placesIndexSchema);
 
-var testPlace = new PlacesModel();
 
-console.log('TestPlace='+testPlace);
+var testPlace = new PlacesIndexModel();
+
+console.log('TestPlace=',testPlace);
+console.log('TestPlace dbid=',testPlace.location);
+
 
 db.close();
 

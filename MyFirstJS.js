@@ -11,8 +11,11 @@ var monString2 = " bonjjour a tos  s";
 
 var monTableau = ["tintin","Milou","Archibald","Tryphon"];
 
+utils.logger("test", "DEBUG");
+//var testPlace = new Place("38200","Villette de Vienne");
 
-var testPlace = new Place("38200","Villette de Vienne");
+
+
 utils.logger(testPlace);
 
 utils.logger("test", "DEBUG");

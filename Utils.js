@@ -4,8 +4,8 @@ const chalk = require('chalk');
 var utilsExports = module.exports = {};
 
 /** Logger function with log level, Debug by default
- * @param {object} dataToLog - what to log
- * @param {string} logLevel - to specify a log level, DEBUG|INFO|WARN
+ * @param {object} dataToLog what to log
+ * @param {string} logLevel to specify a log level, DEBUG|INFO|WARN
  */
 utilsExports.logger = function (dataToLog,level){
     switch(level){
@@ -21,10 +21,26 @@ utilsExports.logger = function (dataToLog,level){
         default :
             console.log(chalk.gray("logger : "),dataToLog);
          
-    }
+    };
     
-   
-
 };
 
+
+
+utilsExports.log =  {
+    
+    warn : function (dataToLog) {
+        console.log("WARN ", dataToLog);
+    }
+    
+};
+
+utilsExports.test = function (data) {
+    console.log("data =",data);
+
+    this.todo = function (datata) {
+        console.log('autre data=',datata);
+    }
+
+}
 
