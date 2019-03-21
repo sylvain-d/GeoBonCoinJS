@@ -3,7 +3,7 @@ var mesObj = require("./Objects.js");
 
 
 utils.log.warn("coucou");
-var monLieu = new mesObj.place("69006","Lyon");
+var monLieu = new mesObj.Place("69006","Lyon");
 utils.log.warn(monLieu);
 
 monLieu.mockGeocode();

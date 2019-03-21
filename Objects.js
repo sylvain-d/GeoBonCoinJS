@@ -6,7 +6,7 @@ var exports = module.exports = {};
  * @param {string} zipCode zipCode of Place, in france 6 digits "69006"
  * @param {string} city city of Place, ex in france "Lyon"
  */
-exports.place = function (zipCode, city) {
+exports.Place = function (zipCode, city) {
     this.zipCode = zipCode;
     this.city = city;
     this.latitude = undefined;
