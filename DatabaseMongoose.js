@@ -31,6 +31,7 @@ var placesIndexSchema = new mongoose.Schema({
    * _id given by mongo for document representing the place
    */
   idPlaceInMongo : mongoose.Schema.Types.ObjectId,
+  //@TODO : tableau des id des documents Annonces qui sont sur cettte Place
   keyPlace : String,
   idPlaceGMap : String,
   location : {
