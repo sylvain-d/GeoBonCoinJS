@@ -1,4 +1,5 @@
 {
-    "gMapApiKey" : "AIzaSyCHZx19rrBq4rDw7_b69Gjsa4EuFSv3G8Y"
+    "gMapApiKey" : "AIzaSyCHZx19rrBq4rDw7_b69Gjsa4EuFSv3G8Y",
+    "env" : "local"
 
 }
