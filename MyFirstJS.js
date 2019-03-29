@@ -1,7 +1,10 @@
 //var express = require('express');
 var utils = require("./Utils.js");
+var objects = require ("./Objects.js");
+var fs = require("fs");
 
-const GMAP_API = 'AIzaSyCHZx19rrBq4rDw7_b69Gjsa4EuFSv3G8Y';
+//Properties.json to file with your GMap API Key
+const GMAP_API = JSON.parse(fs.readFileSync('./properties.json','utf8')).gMapApiKey;
 var lodash = require('lodash');
 var int1 = 1;
 var int2 = 1;
@@ -16,7 +19,7 @@ utils.logger("test", "DEBUG");
 
 
 
-utils.logger(testPlace);
+//utils.logger(testPlace);
 
 utils.logger("test", "DEBUG");
 utils.logger("test", "INFO");
@@ -36,7 +39,7 @@ if(int1 === int2){
   utils.logger("int === int 2");
 }
 
-//geocodePlace(new Place("69006","Lyon"));
+geocodePlace(new Place("69006","Lyon"));
 
 utiliTableau(monTableau);
 
@@ -66,6 +69,7 @@ function Place(zipCode, city) {
     //Place ID from GMaps, avoiding another geocoding request, not usefull considering the previous key, for futur usage
     this.idPlaceGMap = undefined;
     this.setGeocode = function (lat,lng,idPlace) {
+      console.log("je gecode");
       this.latitude = lat;
       this.longitude = lng;
       this.idPlaceGMap = idPlace;
@@ -74,16 +78,7 @@ function Place(zipCode, city) {
     }
   }
 
-  //Constructor for announcement
-  function Announce(announceId, title, iconePicture, price, announceText, place, announceURL) {
-      this.title = title;
-      this.announceId = announceId;  
-      this.iconePicture = iconePicture;
-      this.price = price;
-      this.announceText = announceText;
-      this.place = place;
-      this.announceURL = announceURL;
-  } 
+
 
 
 
@@ -143,11 +138,14 @@ function geocodePlace(placeToGeocode) {
       region:     'fr'
     }, function(err, response) {
       if (!err) {
+        console.log("ciyciy",response.json.results[0].geometry.location.lat);
+
         placeToGeocode.setGeocode(response.json.results[0].geometry.location.lat,response.json.results[0].geometry.location.lng,response.json.results[0].place_id);
+        console.log("test",placeToGeocode);
         return placeToGeocode;
           
       }else {
-          console.log(err.toString());
+          console.log("erreur",err);
       }
     });
 

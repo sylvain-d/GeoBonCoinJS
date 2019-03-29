@@ -43,6 +43,24 @@ exports.Place = function (zipCode, city) {
     };
 
 
+ /**
+  * Constructor for Announce
+  * @param  {String} title Announce title
+  * @param  {String} iconePicture Announce picture for icone
+  * @param  {Number} price Announce price
+  * @param  {string} announceText Announce description
+  * @param  {Place} place the object Place linked to the Announce
+  * @param  {string} announceURL url for announce
+  */
+ exports.Announce = function (announceId, title, iconePicture, price, announceText, place, announceURL) {
+    this.title = title;
+    this.iconePicture = iconePicture;
+    this.price = price;
+    this.announceText = announceText;
+    this.place = place;
+    this.announceURL = announceURL;
+};
+
 
 exports.testExportObject = {
   name : "sylvain",
