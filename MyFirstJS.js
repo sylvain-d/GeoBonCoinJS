@@ -40,8 +40,9 @@ if(int1 == int2){
 if(int1 === int2){
   utils.logger("int === int 2");
 }
-
-geocodePlace(new Place("69006","Lyon"));
+var maplace = new objects.Place("69006","Lyon");
+geocodePlace(maplace);
+console.log("coucou apres geocoe",maplace);
 
 utiliTableau(monTableau);
 
@@ -77,6 +78,7 @@ function Place(zipCode, city) {
       this.idPlaceGMap = idPlace;
       this.crd_long_lat = [long,lat];
       this.crd_geoJson = {type:"Point",coordinates:this.crd_long_lat};
+      console.log("fini");
     }
   }
 
@@ -144,6 +146,7 @@ function geocodePlace(placeToGeocode) {
 
         placeToGeocode.setGeocode(response.json.results[0].geometry.location.lat,response.json.results[0].geometry.location.lng,response.json.results[0].place_id);
         console.log("test",placeToGeocode);
+        console.log("rein apres test");
         return placeToGeocode;
           
       }else {
