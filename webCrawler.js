@@ -24,8 +24,7 @@ rpn(urlToCrawl)
         console.log("bug",errCrawling);
     });
 
-
-    //use of request as promise with cheerio, trying to change User-Agent
+//use of request as promise with cheerio, trying to change User-Agent
 var options = {
     uri: urlToCrawl,
     headers: {

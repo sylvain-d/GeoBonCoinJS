@@ -1,45 +1,73 @@
 //File for utils to use everywhere
 const chalk = require('chalk');
 
-var utilsExports = module.exports = {};
+const utilsExports = module.exports = {};
 
 /** Logger function with log level, Debug by default
  * @param {object} dataToLog what to log
  * @param {string} logLevel to specify a log level, DEBUG|INFO|WARN
  */
-utilsExports.logger = function (dataToLog,level){
+function logger(level,...args){
+    var args = Array.prototype.slice.call(arguments);
     switch(level){
-        case "DEBUG" : 
-            console.log(chalk.blue("["+level+"]\t"),dataToLog);
+        case "DEBUG" :
+            args[0]= chalk.bgCyan("["+args[0]+"]\t");
             break;
         case "INFO" : 
-            console.log(chalk.green("["+level+"]\t"),dataToLog);
+            args[0]= chalk.bgGreen("["+level+"]\t");
             break;
         case "WARN" :
-            console.log(chalk.red("["+level+"]\t"),dataToLog);
+            args[0]= chalk.bgRed("["+level+"]\t");
             break;
+        case "ERROR" :
+            args[0]= chalk.bgMagenta("["+level+"]\t");
+        break;
         default :
-            console.log(chalk.gray("logger : "),dataToLog);
-         
+            args[0]= chalk.gray("["+args[0]+"]\t")
+            
     };
+    console.log.apply(console,args)
     
 };
 
 
 
+
+/**
+ * logger with 3 levels, WARN, INFO, DEBUG
+ * 
+ * usage log.warn(dataToLog)
+ */
 utilsExports.log =  {
-    
-    warn : function (dataToLog) {
-        console.log("WARN ", dataToLog);
+    WARN : function (...args) {
+        logger ("WARN",...args);
+    },
+    INFO : function (...args) {
+        logger ("INFO",...args);
+    },
+    DEBUG : function (...args) {
+        logger ("DEBUG",...args);
+    },
+    ERROR : function (...args) {
+        logger ("ERROR",...args);
     }
-    
+        
 };
-
-utilsExports.test = function (data) {
+/**
+ * USELESS, POC ONLY
+ * 
+ * POC for exports, works as function or object
+ * 
+ * with util = require('./Utils.js') util.functionOrObj(data) log data
+ * 
+ * with myObj = new util.functionOrObj() works like anb obj and we could call myObj.myInnerFunction(otherData)
+ * @param  {} data if used with a require, log data
+ */
+utilsExports.functionOrObj = function (data) {
     console.log("data =",data);
 
-    this.todo = function (datata) {
-        console.log('autre data=',datata);
+    this.myInnerFunction = function (otherData) {
+        console.log('Other data=',otherData);
     }
 
 }

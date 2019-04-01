@@ -8,54 +8,24 @@ const env = require("./properties.json").env;
 const GMAP_API = JSON.parse(fs.readFileSync('./properties.json','utf8')).gMapApiKey;
 
 var lodash = require('lodash');
-var int1 = 1;
-var int2 = 1;
-var char1 = "1";
-var monString = "bonjjouratoss";
-var monString2 = " bonjjour a tos  s";
 
-var monTableau = ["tintin","Milou","Archibald","Tryphon"];
 
-utils.logger("test", "DEBUG");
+
+
+
 //var testPlace = new Place("38200","Villette de Vienne");
 
 
 
 //utils.logger(testPlace);
 
-utils.logger("test", "DEBUG");
-utils.logger("test", "INFO");
-utils.logger("test", "WARN");
 
 
-if(int1 == char1) {
-    utils.logger("int1 == char1");
-}
-if (int1 === char1) {
-    utils.logger("int1 === char1");
-}
-if(int1 == int2){
-  utils.logger("int == int 2");
-}
-if(int1 === int2){
-  utils.logger("int === int 2");
-}
 var maplace = new objects.Place("69006","Lyon");
 geocodePlace(maplace);
 console.log("coucou apres geocoe",maplace);
 
-utiliTableau(monTableau);
 
-function utiliTableau (unTableau) {
-var autreTableau = ["castafiore","rastapopoulous"];
-
-autreTableau = autreTableau.concat(unTableau);
-
-   utils.logger(autreTableau);
-
-
-
-}
 
 
 //Constructor for Place, we'll set coordinate later
