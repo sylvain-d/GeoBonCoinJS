@@ -26,8 +26,11 @@
   "dependencies": {
     "@google/maps": "^0.5.5",
     "chalk": "^2.4.2",
+    "cheerio": "^1.0.0-rc.2",
     "lodash": "^4.17.11",
     "mongodb": "^3.1.13",
-    "mongoose": "^5.4.19"
+    "mongoose": "^5.4.19",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7"
   }
 }
