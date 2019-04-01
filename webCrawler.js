@@ -22,7 +22,7 @@ rpn(urlToCrawl)
     })
     .catch(function(errCrawling){
         console.log("bug",errCrawling);
-    });*/
+    });
 
 
     //use of request as promise with cheerio, trying to change User-Agent
