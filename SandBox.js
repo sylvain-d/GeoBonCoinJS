@@ -1,4 +1,4 @@
-const utils = require("./Utils.js");
+const logger = require("./Utils.js").log;
 const mesObj = require("./Objects.js");
 
 
@@ -9,12 +9,24 @@ var monLieu = new mesObj.Place("69006","Lyon");
 monLieu.mockGeocode();
 //utils.log.DEBUG(monLieu);
 
-utils.log.ERROR("TEst erro")
+var location = {};
+location.test = "coucou";
+location.moi = "sylvaun;";
 
-utils.log.INFO("TEst erro")
-utils.log.DEBUG("TEst error","deux","trois",monLieu);
+var tab = [];
+tab.moi = "sylvain";
+tab["nom"] = "destr";
+logger.INFO(tab);
 
-utils.log.WARN("TEst error","deux","trois",monLieu);
+console.log(location);
+
+
+logger.ERROR("TEst erro");
+
+logger.INFO("TEst erro");
+logger.DEBUG("TEst error","deux","trois",monLieu);
+
+logger.WARN("TEst error","deux","trois",monLieu);
 
 /*
 var mylog = (function () {
