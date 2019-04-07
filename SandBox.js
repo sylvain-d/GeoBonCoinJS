@@ -28,6 +28,29 @@ logger.DEBUG("TEst error","deux","trois",monLieu);
 
 logger.WARN("TEst error","deux","trois",monLieu);
 
+
+
+
+
+// "id": "8",
+// "label": "IMMOBILIER",
+// "channel": "_immobilier_",
+// "subcategories": [
+//   {
+//     "id": "9",
+//     "label": "Ventes immobilières",
+//     "channel": "ventes_immobilieres"
+//   },
+const _ = require("lodash");
+const categories = require('./node_modules/leboncoin-api/const/categories.json');
+var category ="ventes_immobilieres";
+var filteredCategory = _(categories)
+            .map(cat => cat.subcategories)
+            .flatten()
+            .filter(cat => cat.channel === category)
+            .value()[0];
+console.log(filteredCategory);
+
 /*
 var mylog = (function () {
     return {
