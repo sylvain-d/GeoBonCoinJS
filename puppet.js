@@ -1,3 +1,6 @@
+//Attemps to use puppeteer to crawl leboncoin but the website use a JS blocker. Can't pass throught the captcha.
+//Someone on github use directly the leboncoin API
+//I gave up the crawling.
 const puppeteer = require('puppeteer');
 const fs = require("fs");
 
@@ -9,15 +12,16 @@ var html;
    
     await page.goto('https://www.leboncoin.fr',{ 
       waitLoad: true, 
-      waitNetworkIdle: true // defaults to false
+      waitNetworkIdle: true, // defaults to false,
+      waitUntil : "domcontentloaded"
     });
 
     try {
 console.log("wait for slecto");
-    await page.waitFor('.recaptcha-checkbox-checkmark');
+   // await page.waitFor('.recaptcha-checkbox-checkmark');
     await page.screenshot({path: 'example.png'});
     html = await page.content();
-    fs.writeFileSync("exemple.html",html);
+    fs.writeFile("exemple.html",html,function(err) {console.log(err)});
     console.log("file written");
     console.log(html);
 
