@@ -15,7 +15,7 @@ request(urlToCrawl, function (error, response, body) {
   console.log('body:', body); // Print the HTML for the Google homepage.
 });
 
-//use of request as promise .then if success .catch elle
+//use of request as promise .then if success .catch else
 rpn(urlToCrawl)
     .then(function(htmlCrawled){
         console.log("succes");

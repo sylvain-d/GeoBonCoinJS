@@ -1,6 +1,6 @@
 const logger = require("./Utils.js").log;
 const mesObj = require("./Objects.js");
-
+const _ = require("lodash");
 
 
 var monLieu = new mesObj.Place("69006","Lyon");
@@ -11,20 +11,19 @@ monLieu.mockGeocode();
 
 var location = {};
 location.test = "coucou";
-location.moi = "sylvaun;";
+location.moi = "sylvain;";
 
 var tab = [];
 tab.moi = "sylvain";
-tab["nom"] = "destr";
-logger.INFO(tab);
-
-console.log(location);
+tab["nom"] = "dstrs";
+logger.DEBUG("tab=",tab,"location = ",location);
 
 
-logger.ERROR("TEst erro");
+tab= _(tab).map(elem => {elem.value = elem.value+"rien"})
 
-logger.INFO("TEst erro");
-logger.DEBUG("TEst error","deux","trois",monLieu);
+console.log(tab)
+
+logger.DEBUG("MonLieu = ",monLieu);
 
 logger.WARN("TEst error","deux","trois",monLieu);
 
@@ -41,7 +40,7 @@ logger.WARN("TEst error","deux","trois",monLieu);
 //     "label": "Ventes immobilières",
 //     "channel": "ventes_immobilieres"
 //   },
-const _ = require("lodash");
+
 const categories = require('./node_modules/leboncoin-api/const/categories.json');
 var category ="ventes_immobilieres";
 var filteredCategory = _(categories)
@@ -51,33 +50,5 @@ var filteredCategory = _(categories)
             .value()[0];
 console.log(filteredCategory);
 
-/*
-var mylog = (function () {
-    return {
-        log: function() {
-            var args = Array.prototype.slice.call(arguments);
-            console.log.apply(console, args);
-        },
-        warn: function() {
-            var args = Array.prototype.slice.call(arguments);
-            console.warn.apply(console, args);
-        },
-        error: function() {
-            var args = Array.prototype.slice.call(arguments);
-            console.error.apply(console, args);
-        }
-    }
-}());
 
-var name = "Alex";
-var arr = [1, 2, 3];
-var obj = { a:1, b:2, c:3 };
-
-var hello = function(msg){alert(msg);};
-mylog.log("Name: ", name);
-//mylog.log("Window Debug: ", window);
-mylog.error("Some error happened");
-mylog.warn("Ahh... Warning", arr, obj);
-mylog.log("more parameters: ", arr, obj, hello);
-*/
 

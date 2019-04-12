@@ -7,7 +7,7 @@ const env = require("./properties.json").env;
 //Properties.json to file with your GMap API Key, another way to load json properties
 const GMAP_API = JSON.parse(fs.readFileSync('./properties.json','utf8')).gMapApiKey;
 
-var lodash = require('lodash');
+var _ = require('lodash');
 
 
 

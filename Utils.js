@@ -9,9 +9,10 @@ const utilsExports = module.exports = {};
  */
 function logger(level,...args){
     var args = Array.prototype.slice.call(arguments);
+    
     switch(level){
         case "DEBUG" :
-            args[0]= chalk.bgCyan("["+args[0]+"]\t");
+            args[0]= chalk.bgCyan("["+level+"]\t");
             break;
         case "INFO" : 
             args[0]= chalk.bgGreen("["+level+"]\t");

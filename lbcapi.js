@@ -20,10 +20,10 @@ var search = new leboncoin.Search()
     .setArea({"lat": 45.7679705, "lng": 4.8637901999999995, "radius": 2000})
     
     
-    //.addSearchExtra("price", {min: 25000, max: 300000}) // will add a range of price
+    .addSearchExtra("price", {min: 25000, max: 300000}) // will add a range of price
     //.addSearchExtra("real_estate_type", ["1"])
     //.addSearchExtra("rooms", {min:5, max:6})
-    .addSearchExtra("square", {min:130, max:140})
+    //.addSearchExtra("square", {min:130, max:140})
 
     //.addSearchExtra('furnished', ["1", "Non meublé"]); // will add enums for Meublé and Non meublé
 
