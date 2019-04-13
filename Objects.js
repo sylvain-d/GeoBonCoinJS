@@ -30,6 +30,16 @@ exports.Place = function (zipCode, city) {
       this.crd_geoJson = {type:"Point",coordinates:this.crd_long_lat};
     };
 
+    
+    /**
+     * Constructor for DistanceToMe, from a place, calculate distance and time to reach others key places, work, parents...
+     * @param  {} place place from where we compute time and distance
+     */
+    exports.DistanceToMe = function(place) {
+
+      //@Todo : same object with time and distance
+    }
+
     /**
      * Mock the geocode function with Place related to 69006 Lyon
      */
@@ -52,13 +62,14 @@ exports.Place = function (zipCode, city) {
   * @param  {Place} place the object Place linked to the Announce
   * @param  {string} announceURL url for announce
   */
- exports.Announce = function (announceId, title, iconePicture, price, announceText, place, announceURL) {
+ exports.Announce = function (announceId, title, iconePicture, price, announceText, place, announceURL, item) {
     this.title = title;
     this.iconePicture = iconePicture;
     this.price = price;
     this.announceText = announceText;
     this.place = place;
     this.announceURL = announceURL;
+    this.item = item;
 };
 
 

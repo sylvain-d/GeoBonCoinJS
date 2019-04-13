@@ -7,28 +7,28 @@ const utilsExports = module.exports = {};
  * @param {object} dataToLog what to log
  * @param {string} logLevel to specify a log level, DEBUG|INFO|WARN
  */
-function logger(level,...args){
+function logger(level, ...args) {
     var args = Array.prototype.slice.call(arguments);
-    
-    switch(level){
-        case "DEBUG" :
-            args[0]= chalk.bgCyan("["+level+"]\t");
+
+    switch (level) {
+        case "DEBUG":
+            args[0] = chalk.bgCyan("[" + level + "]\t");
             break;
-        case "INFO" : 
-            args[0]= chalk.bgGreen("["+level+"]\t");
+        case "INFO":
+            args[0] = chalk.bgGreen("[" + level + "]\t");
             break;
-        case "WARN" :
-            args[0]= chalk.bgRed("["+level+"]\t");
+        case "WARN":
+            args[0] = chalk.bgRed("[" + level + "]\t");
             break;
-        case "ERROR" :
-            args[0]= chalk.bgMagenta("["+level+"]\t");
-        break;
-        default :
-            args[0]= chalk.gray("["+args[0]+"]\t")
-            
+        case "ERROR":
+            args[0] = chalk.bgMagenta("[" + level + "]\t");
+            break;
+        default:
+            args[0] = chalk.gray("[" + args[0] + "]\t")
+
     };
-    console.log.apply(console,args)
-    
+    console.log.apply(console, args)
+
 };
 
 
@@ -39,20 +39,20 @@ function logger(level,...args){
  * 
  * usage log.warn(dataToLog)
  */
-utilsExports.log =  {
-    WARN : function (...args) {
-        logger ("WARN",...args);
+utilsExports.log = {
+    WARN: function (...args) {
+        logger("WARN", ...args);
     },
-    INFO : function (...args) {
-        logger ("INFO",...args);
+    INFO: function (...args) {
+        logger("INFO", ...args);
     },
-    DEBUG : function (...args) {
-        logger ("DEBUG",...args);
+    DEBUG: function (...args) {
+        logger("DEBUG", ...args);
     },
-    ERROR : function (...args) {
-        logger ("ERROR",...args);
+    ERROR: function (...args) {
+        logger("ERROR", ...args);
     }
-        
+
 };
 /**
  * USELESS, POC ONLY
@@ -65,10 +65,10 @@ utilsExports.log =  {
  * @param  {} data if used with a require, log data
  */
 utilsExports.functionOrObj = function (data) {
-    console.log("data =",data);
+    console.log("data =", data);
 
     this.myInnerFunction = function (otherData) {
-        console.log('Other data=',otherData);
+        console.log('Other data=', otherData);
     }
 
 }

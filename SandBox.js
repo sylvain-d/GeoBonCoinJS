@@ -19,13 +19,15 @@ tab["nom"] = "dstrs";
 logger.DEBUG("tab=",tab,"location = ",location);
 
 
-tab= _(tab).map(elem => {elem.value = elem.value+"rien"})
+//tab= _(tab).map(elem => {elem.value = elem.value+"rien"})
 
 console.log(tab)
+tab.push(location)
+logger.DEBUG("tab= ",tab)
+logger.WARN(JSON.stringify(tab))
+logger.INFO("Tab 1",tab[3])
 
-logger.DEBUG("MonLieu = ",monLieu);
 
-logger.WARN("TEst error","deux","trois",monLieu);
 
 
 

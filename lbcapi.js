@@ -22,7 +22,7 @@ var search = new leboncoin.Search()
     
     .addSearchExtra("price", {min: 25000, max: 300000}) // will add a range of price
     //.addSearchExtra("real_estate_type", ["1"])
-    //.addSearchExtra("rooms", {min:5, max:6})
+    .addSearchExtra("rooms", {min:5, max:6})
     //.addSearchExtra("square", {min:130, max:140})
 
     //.addSearchExtra('furnished', ["1", "Non meublé"]); // will add enums for Meublé and Non meublé

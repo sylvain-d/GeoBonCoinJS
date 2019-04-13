@@ -3,7 +3,7 @@
 
 const fs = require('fs');
 const myObjects = require('./Objects');
-const utils = require('./Utils');
+const utils = require('./Utils').log;
 var announces = [];
 
 /**
