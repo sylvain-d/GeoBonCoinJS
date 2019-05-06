@@ -95,35 +95,6 @@ function checkPlaceInBase(placeToCheck) {
 
 }
 
-function distance() {
-
-  var gMapsClient = require('@google/maps').createClient({
-    key: GMAP_API
-  });
-
-  const googleUtil = require('@google/maps').util;
-  const orig = googleUtil.encodePath([{lat:45.7677497,lng:4.863501}]);
-
-  const dest = googleUtil.encodePath([{lat:45.58539,lng:4.91534},{lat:45.58539,lng:4.91534}]);
-  
-    gMapsClient.distanceMatrix({
-
-      origins : orig,
-      destinations : dest,
-      language:   'fr',
-      region:     'fr'
-    }, function(err, response) {
-      if (!err) {
-        console.log("ciyciy",response.json.results[0]);
-
-      
-          
-      }else {
-          console.log("erreur",err);
-      }
-    });
-
-}
 
 function geocodePlace(placeToGeocode) {
     var gMapsClient = require('@google/maps').createClient({
