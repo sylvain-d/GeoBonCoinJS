@@ -5,6 +5,7 @@
   "main": "MyFirstJS.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+
   },
   "repository": {
     "type": "git",
@@ -25,13 +26,15 @@
   "homepage": "https://github.com/sylvain-d/GeoBonCoinJS#readme",
   "dependencies": {
     "@google/maps": "^0.5.5",
+    "browserify": "^16.2.3",
     "chalk": "^2.4.2",
     "cheerio": "^1.0.0-rc.3",
+    "leaflet": "^1.5.1",
     "leboncoin-api": "0.0.35",
     "lodash": "^4.17.11",
-    "mongodb": "^3.2.3",
-    "mongoose": "^5.5.5",
-    "puppeteer": "^1.15.0",
+    "mongodb": "^3.2.7",
+    "mongoose": "^5.5.14",
+    "puppeteer": "^1.17.0",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.7"
   }
