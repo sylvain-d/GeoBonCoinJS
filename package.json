@@ -33,7 +33,7 @@
     "leboncoin-api": "0.0.35",
     "lodash": "^4.17.11",
     "mongodb": "^3.2.7",
-    "mongoose": "^5.5.14",
+    "mongoose": "^5.7.5",
     "puppeteer": "^1.17.0",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.7"
