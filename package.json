@@ -31,7 +31,7 @@
     "cheerio": "^1.0.0-rc.3",
     "leaflet": "^1.5.1",
     "leboncoin-api": "0.0.35",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "mongodb": "^3.2.7",
     "mongoose": "^5.5.14",
     "puppeteer": "^1.17.0",
